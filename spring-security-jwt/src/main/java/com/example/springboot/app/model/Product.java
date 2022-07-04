@@ -14,30 +14,16 @@ import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
-@Table(name = "articulos_ropa_detalles")
-public class   Product {
-
+@Table(name = "employee")
+public class Product {
     @Id
-    //@Column(name"")
-    private long id;
+    private  long id;
 
-    @Column(name = "idArticulo")
-    private Integer idArticulos;
+    @Column(name = "surnombre")
+    private  String apellido;
 
-    @Column(name = "tipo")
-    private String prendaTipo;
-
-    @Column(name = "usabilidad")
-    private String categoria;
-
-    @Column(name = "talle")
-    private String talla;
-
-    @Column(name = "temporada")
-    private String temporadaEstacion;
-
-    @Column(name = "color")
-    private String coloPrenda;
+    @Column(name="firstname")
+    private  String nombre;
 
     public long getId() {
         return id;
@@ -47,51 +33,19 @@ public class   Product {
         this.id = id;
     }
 
-    public Integer getIdArticulos() {
-        return idArticulos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setIdArticulos(Integer idArticulos) {
-        this.idArticulos = idArticulos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getPrendaTipo() {
-        return prendaTipo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPrendaTipo(String prendaTipo) {
-        this.prendaTipo = prendaTipo;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public String getTalla() {
-        return talla;
-    }
-
-    public void setTalla(String talla) {
-        this.talla = talla;
-    }
-
-    public String getTemporadaEstacion() {
-        return temporadaEstacion;
-    }
-
-    public void setTemporadaEstacion(String temporadaEstacion) {
-        this.temporadaEstacion = temporadaEstacion;
-    }
-
-    public String getColoPrenda() {
-        return coloPrenda;
-    }
-
-    public void setColoPrenda(String coloPrenda) {
-        this.coloPrenda = coloPrenda;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

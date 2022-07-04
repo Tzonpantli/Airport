@@ -31,12 +31,8 @@ public class ProductServiceImpl implements ProductService {
 		if (productDb.isPresent()) {
 			Product productUpdate = productDb.get();
 			productUpdate.setId(product.getId());//Id de prenda
-			productUpdate.setIdArticulos(product.getIdArticulos());//id general
-			productUpdate.setPrendaTipo(product.getPrendaTipo());//tipo
-			productUpdate.setCategoria(product.getCategoria());//usabilidad
-			productUpdate.setTalla(product.getTalla());//talla
-			productUpdate.setTemporadaEstacion(product.getTemporadaEstacion());
-			productUpdate.setColoPrenda(product.getColoPrenda());
+			productUpdate.setApellido(product.getApellido());//tipo
+			productUpdate.setNombre(product.getNombre());//usabilidad
 			productRepository.save(productUpdate);
 			return productUpdate;
 		} else {
