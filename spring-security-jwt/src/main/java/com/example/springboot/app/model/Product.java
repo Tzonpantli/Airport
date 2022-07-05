@@ -1,20 +1,11 @@
 package com.example.springboot.app.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.CreationTimestamp;
+import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
-@Table(name = "employee")
 public class Product {
     @Id
     private  long id;
@@ -24,6 +15,12 @@ public class Product {
 
     @Column(name="firstname")
     private  String nombre;
+
+    @OneToOne
+    Set<Countrys> countrys;
+
+    @ManyToMany
+    Set<Languaje>  languajes;
 
     public long getId() {
         return id;
@@ -47,5 +44,21 @@ public class Product {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Set<Countrys> getCountrys() {
+        return countrys;
+    }
+
+    public void setCountrys(Set<Countrys> countrys) {
+        this.countrys = countrys;
+    }
+
+    public Set<Languaje> getLanguajes() {
+        return languajes;
+    }
+
+    public void setLanguajes(Set<Languaje> languajes) {
+        this.languajes = languajes;
     }
 }
